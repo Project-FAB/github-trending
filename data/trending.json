@@ -1,0 +1,88 @@
+{
+  "updatedAt": "2026-11-01T20:00:00.000Z",
+  "periods": {
+    "daily": [
+      {
+        "owner": "ollama",
+        "name": "ollama",
+        "url": "https://github.com/ollama/ollama",
+        "description": "Get up and running with large language models.",
+        "language": "Go",
+        "languageColor": "#00ADD8",
+        "stars": 158000,
+        "forks": 13000,
+        "starsGained": 890
+      },
+      {
+        "owner": "facebook",
+        "name": "react",
+        "url": "https://github.com/facebook/react",
+        "description": "The library for web and native user interfaces.",
+        "language": "JavaScript",
+        "languageColor": "#f1e05a",
+        "stars": 241000,
+        "forks": 49000,
+        "starsGained": 312
+      },
+      {
+        "owner": "someone",
+        "name": "awesome-list",
+        "url": "https://github.com/someone/awesome-list",
+        "description": null,
+        "language": null,
+        "languageColor": null,
+        "stars": 3100,
+        "forks": 200,
+        "starsGained": 1200
+      }
+    ],
+    "weekly": [
+      {
+        "owner": "astral-sh",
+        "name": "uv",
+        "url": "https://github.com/astral-sh/uv",
+        "description": "An extremely fast Python package manager.",
+        "language": "Rust",
+        "languageColor": "#dea584",
+        "stars": 72000,
+        "forks": 2100,
+        "starsGained": 4100
+      },
+      {
+        "owner": "ollama",
+        "name": "ollama",
+        "url": "https://github.com/ollama/ollama",
+        "description": "Get up and running with large language models.",
+        "language": "Go",
+        "languageColor": "#00ADD8",
+        "stars": 158000,
+        "forks": 13000,
+        "starsGained": 5200
+      }
+    ],
+    "monthly": [
+      {
+        "owner": "facebook",
+        "name": "react",
+        "url": "https://github.com/facebook/react",
+        "description": "The library for web and native user interfaces.",
+        "language": "JavaScript",
+        "languageColor": "#f1e05a",
+        "stars": 241000,
+        "forks": 49000,
+        "starsGained": 8100
+      },
+      {
+        "owner": "astral-sh",
+        "name": "uv",
+        "url": "https://github.com/astral-sh/uv",
+        "description": "An extremely fast Python package manager.",
+        "language": "Rust",
+        "languageColor": "#dea584",
+        "stars": 72000,
+        "forks": 2100,
+        "starsGained": 15000
+      }
+    ]
+  }
+}
