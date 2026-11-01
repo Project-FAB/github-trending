@@ -27,6 +27,16 @@ describe('scrapeAll', () => {
     await expect(scrapeAll(fetchHtml, now)).rejects.toThrow(/weekly/)
   })
 
+  it('rejects when star counts stop parsing (partial HTML change)', async () => {
+    const broken = daily.replaceAll('/stargazers"', '/stars"')
+    await expect(scrapeAll(async () => broken, now)).rejects.toThrow(/star counts/)
+  })
+
+  it('rejects when every repo shows zero stars gained', async () => {
+    const broken = daily.replace(/[\d,]+ stars today/g, 'stars today')
+    await expect(scrapeAll(async () => broken, now)).rejects.toThrow(/star counts/)
+  })
+
   it('rejects when a fetch fails', async () => {
     await expect(scrapeAll(async () => { throw new Error('HTTP 503') }, now)).rejects.toThrow(/503/)
   })

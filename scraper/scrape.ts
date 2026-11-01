@@ -5,7 +5,7 @@ import { parseTrending } from './parse'
 export const PERIODS: Period[] = ['daily', 'weekly', 'monthly']
 export const trendingUrl = (period: Period) => `https://github.com/trending?since=${period}`
 
-/** Fetches and parses all three periods. Throws if any fetch fails or any period has no repos. */
+/** Fetches and parses all three periods. Throws if any fetch fails, or any period has no repos or broken star counts. */
 export async function scrapeAll(
   fetchHtml: (url: string) => Promise<string>,
   now: Date = new Date(),
@@ -14,6 +14,10 @@ export async function scrapeAll(
     PERIODS.map(async (period) => {
       const repos = parseTrending(await fetchHtml(trendingUrl(period)))
       if (repos.length === 0) throw new Error(`No repos parsed for ${period}`)
+      // A partial page change can leave rows parseable but numbers missing; don't publish zeros.
+      if (repos.some((r) => r.stars === 0) || repos.every((r) => r.starsGained === 0)) {
+        throw new Error(`Bad star counts parsed for ${period}`)
+      }
       return repos
     }),
   )
